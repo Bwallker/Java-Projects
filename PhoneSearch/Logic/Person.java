@@ -1,64 +1,120 @@
 package PhoneSearch.Logic;
+
 import PhoneSearch.*;
 import java.util.*;
+
 public class Person {
+
     private Set<String> numbers;
-    private String adress;
+    private String address;
     private String name;
-    public Person (String name) {
+
+    public Person(String name, HashSet<String> numbers, String address) {
         this.name = name;
-        this.numbers = new HashSet<String>();
+        this.numbers = numbers;
+        this.address = address;
     }
+
+    public Person(String name, HashSet<String> numbers) {
+        this(name, numbers, null);
+    }
+
+    public Person(String name, String address) {
+        this(name, null, address);
+    }
+
+    public Person(String name) {
+        this(name, null, null);
+    }
+
     public void addNumber(String number) {
-        if (!this.numbers.contains(number)) {
-            this.numbers.add(number);
+        if (this.numbers == null) {
+            this.numbers = new HashSet<String>();
         }
+        this.numbers.add(number);
     }
-    public void addAdress(String adress) {
-        this.adress = adress;
+
+    public void addAddress(String adress) {
+        this.address = adress;
     }
-    public String getAdress() {
-        return this.adress;
+
+    public String getAddress() {
+        return this.address;
     }
+
     public String getName() {
         return this.name;
     }
+
     public Set getNumbers() {
         return this.numbers;
     }
-    public String getAdressFromName(String name){
+
+    public String getAddressFromName(String name) {
         if (name.equals(this.name)) {
-            return this.adress;
+            return this.address;
         }
         return null;
     }
+
     public Set getNumberFromName(String name) {
-        if(name.equals(this.name)) {
+        if (name.equals(this.name)) {
             return this.numbers;
         }
         return null;
     }
-    public String getNameFromNumber(Set searchedNumbers) {
-        if(searchedNumbers == this.numbers) {
-            return this.name;
+
+    public String getNameFromNumber(String searchedNumber) {
+        for (String number : this.numbers) {
+            if (number.equals(searchedNumber)) {
+                return this.name;
+            }
         }
         return null;
     }
-    public List searchForPersonalInfo(String name) {
-        List list = new ArrayList();
-        if(name.equals(this.name)) {
-            list.add(this.numbers);
-            list.add(this.adress);
+
+    public Person searchForPersonalInfo(String name) {
+        if (name.equals(this.name)) {
+            return this;
         }
-        if(list.isEmpty()) {
-            return null;
-        }
-        return list;
+        return null;
     }
+
     public boolean checkName(String name) {
-        if(name.equals(this.name)) {
+        if (name.equals(this.name)) {
             return true;
         }
         return false;
+    }
+
+    public String printNumbers() {
+        for (String number : this.numbers) {
+            System.out.println("   " + number);
+        }
+        return "";
+    }
+
+    public Set<String> NumbersThatContainString(String input) {
+        Set<String> relevantNumbers = new HashSet<String>();
+        for (String number : this.numbers) {
+            if (number.contains(input)) {
+                relevantNumbers.add(number);
+            }
+        }
+        return relevantNumbers;
+    }
+
+    @Override
+    public String toString() {
+        String output = "  address: " + this.address + "\n" + "  phone numbers:" + "\n" + this.printNumbers();
+        return output;
+    }
+
+    public String numbersToString(Set<String> input) {
+        String output = "  phone numbers:\n";
+        for (String number : input) {
+            output += "   " + number + "\n";
+        }
+        return output;
     }
 }

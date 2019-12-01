@@ -10,37 +10,40 @@ public class Persons {
     public Persons() {
         this.persons = new ArrayList<Person>();
     }
+    public void addPerson(Person person) {
+        this.persons.add(person);
+    }
 
-    public String getAdressFromName(String name) {
+    public String getAddressFromName(String name) {
         String adress = null;
         for (Person person : this.persons) {
-            adress = person.getAdressFromName(name);
+            adress = person.getAddressFromName(name);
         }
         return adress;
     }
 
-    public Set getNumberFromName(String name) {
-        Set numbers = null;
+    public Set<String> getNumberFromName(String name) {
+        Set<String> numbers = null;
         for (Person person : this.persons) {
             numbers = person.getNumberFromName(name);
         }
         return numbers;
     }
 
-    public String getNameFromNumber(Set searchedNumbers) {
+    public String getNameFromNumber(String searchedNumber) {
         String name = null;
         for (Person person : this.persons) {
-            name = person.getNameFromNumber(searchedNumbers);
+            name = person.getNameFromNumber(searchedNumber);
         }
         return name;
     }
 
-    public List searchForPersonalInfo(String name) {
-        List list = null;
+    public Person searchForPersonalInfo(String name) {
+        Person target = null;
         for (Person person : this.persons) {
-            list = person.searchForPersonalInfo(name);
+            target = person.searchForPersonalInfo(name);
         }
-        return list;
+        return target;
     }
 
     public void removePerson(String name) {
@@ -52,19 +55,21 @@ public class Persons {
         }
     }
     
-    public List<String> filteredSearch (String query) {
-        List<String> list = new ArrayList<String>();
+    public Map<String,String> filteredSearch (String query) {
+        Map<String, String> map = new HashMap<String, String>();
         for (Person person : this.persons) {            
-            String name = person.getName();
-            String adress = person.getAdress();
-            if (name.contains(query)) {
-                list.add(name);
+            String key = "";
+            if (person.getName().contains(query)) {
+                key += " " + person.getName() + "\n";
             }
-            if (adress.contains(query)) {
-                list.add(adress);
+            if (person.getAddress().contains(query)) {
+                key += "  address: " + person.getAddress() + "\n";
             }
-            list.add("person processed");
+            Set<String> applicableNumbers = person.NumbersThatContainString(query);
+            String numbersToString = person.numbersToString(applicableNumbers);
+            key += numbersToString;
+            map.put(person.getName(), key);
         }
-        return list;
+        return map;
     }
 }
