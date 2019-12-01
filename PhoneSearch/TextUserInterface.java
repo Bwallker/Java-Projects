@@ -1,6 +1,5 @@
-package PhoneSearch.UI;
 
-import PhoneSearch.Logic.*;
+
 import java.util.*;
 
 public class TextUserInterface {
@@ -56,9 +55,8 @@ public class TextUserInterface {
     private void addNumber() {
         String name = this.getName();
         String number = this.getNumber();
-        Person person = new Person(name);
-        person.addNumber(number);
-        this.persons.addPerson(person);
+        Person person = new Person(name, number, null);
+        this.persons.addPersonOrNumber(person, number);
         System.out.println();
     }
 
@@ -68,7 +66,6 @@ public class TextUserInterface {
         if (numbers == null) {
             System.out.println(" not found");
         } else {
-
             for (String number : numbers) {
                 System.out.println(" " + number);
             }
@@ -90,16 +87,18 @@ public class TextUserInterface {
 
     private void addAddress() {
         String name = this.getAddressName();
-        String adress = this.getAddress();
+        String address = this.getAddress();
         Person person = new Person(name);
-        person.addAddress(adress);
-        this.persons.addPerson(person);
+        person.addAddress(address);
+        if (!this.persons.contains(person)) {
+            this.persons.addPersonOrAddress(person, address);
+        }
         System.out.println();
         System.out.println();
     }
 
     private void searchForPersonalInfo() {
-        String name = this.getName();
+        String name = this.getInfoName();
         Person person = this.persons.searchForPersonalInfo(name);
         this.printPerson(person);
         System.out.println();
@@ -114,9 +113,10 @@ public class TextUserInterface {
     private void filteredSearch() {
         System.out.println("keyword (if empty, all listed): ");
         String keyword = this.reader.nextLine();
+        Map<String, String> map = this.persons.filteredSearch(keyword);
+        System.out.println(map);
         System.out.println();
-        
-        
+
         System.out.println();
     }
 
@@ -131,6 +131,7 @@ public class TextUserInterface {
         String number = this.reader.nextLine();
         return number;
     }
+
     private String getAddressName() {
         System.out.print("whose address: ");
         String name = this.reader.nextLine();
@@ -138,31 +139,30 @@ public class TextUserInterface {
     }
 
     private String getAddress() {
-        System.out.print("whose address: ");
-        String adress = this.reader.nextLine();
-        System.out.println("street: ");
-        adress += " " + this.reader.nextLine();
-        System.out.println("city: ");
-        adress += " " + this.reader.nextLine();
-        return adress;
+        System.out.print("street: ");
+        String address = this.reader.nextLine();
+        System.out.print("city: ");
+        address += " " + this.reader.nextLine();
+        return address;
     }
-
-    private String getInfo() {
+    
+    private String getInfoName() {
         System.out.print("whose information: ");
-        String info = this.reader.nextLine();
+        String info = reader.nextLine();
         return info;
     }
+
     private void printPerson(Person person) {
         if (person == null) {
             System.out.println(" not found");
-        } else if (person.getNumbers() == null) {
-            System.out.println("  address: " + person.getAddress());
+        } else if (person.getAddress() == null && person.getNumbers().isEmpty()) {
+            System.out.println("  address unknown");
             System.out.println("  phone number not found");
         } else if (person.getAddress() == null) {
             System.out.println("  address unknown");
             System.out.println(person.numbersToString(person.getNumbers()));
-        } else if (person.getAddress() == null && person.getNumbers() == null) {
-            System.out.println("  address unknown");
+        } else if (person.getNumbers().isEmpty()) {
+            System.out.println("  address: " + person.getAddress());
             System.out.println("  phone number not found");
         } else {
             System.out.println(person);

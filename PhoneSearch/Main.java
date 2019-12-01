@@ -1,6 +1,3 @@
-package PhoneSearch;
-import PhoneSearch.UI.TextUserInterface;
-
 public class Main {
 
     public static void main(String[] args) {

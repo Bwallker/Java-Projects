@@ -1,41 +1,36 @@
-package PhoneSearch.Logic;
 
-import PhoneSearch.*;
+
 import java.util.*;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private Set<String> numbers;
     private String address;
     private String name;
 
-    public Person(String name, HashSet<String> numbers, String address) {
+    public Person(String name, String number, String address) {
+        this.numbers = new HashSet<String>();
         this.name = name;
-        this.numbers = numbers;
+        this.numbers.add(number);
         this.address = address;
     }
 
-    public Person(String name, HashSet<String> numbers) {
-        this(name, numbers, null);
-    }
-
-    public Person(String name, String address) {
-        this(name, null, address);
+    public Person(String name, String number) {
+        this(name, number, null);
     }
 
     public Person(String name) {
-        this(name, null, null);
+        this.numbers = new HashSet<String>();
+        this.name = name;
+        this.address = null;
     }
 
     public void addNumber(String number) {
-        if (this.numbers == null) {
-            this.numbers = new HashSet<String>();
-        }
         this.numbers.add(number);
     }
 
-    public void addAddress(String adress) {
-        this.address = adress;
+    public void addAddress(String address) {
+        this.address = address;
     }
 
     public String getAddress() {
@@ -57,7 +52,7 @@ public class Person {
         return null;
     }
 
-    public Set getNumberFromName(String name) {
+    public Set<String> getNumberFromName(String name) {
         if (name.equals(this.name)) {
             return this.numbers;
         }
@@ -117,4 +112,36 @@ public class Person {
         }
         return output;
     }
+    @Override
+    public int compareTo(Person secondPerson) {
+        int outcome = this.name.compareTo(secondPerson.getName());
+        return outcome;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Person other = (Person) obj;
+        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
