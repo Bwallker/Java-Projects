@@ -90,10 +90,7 @@ public class TextUserInterface {
         String address = this.getAddress();
         Person person = new Person(name);
         person.addAddress(address);
-        if (!this.persons.contains(person)) {
-            this.persons.addPersonOrAddress(person, address);
-        }
-        System.out.println();
+        this.persons.addPersonOrAddress(person, address);
         System.out.println();
     }
 
@@ -113,10 +110,12 @@ public class TextUserInterface {
     private void filteredSearch() {
         System.out.println("keyword (if empty, all listed): ");
         String keyword = this.reader.nextLine();
-        Map<String, String> map = this.persons.filteredSearch(keyword);
-        System.out.println(map);
         System.out.println();
-
+        ArrayList <HashMap<String, String>> maps = this.persons.filteredSearch(keyword);
+        for (int i = 0; i < maps.size()-1; i++) {
+            HashMap<String, String> index = maps.get(i);
+            this.printInfo(index);
+        }
         System.out.println();
     }
 
@@ -166,6 +165,13 @@ public class TextUserInterface {
             System.out.println("  phone number not found");
         } else {
             System.out.println(person);
+        }
+    }
+    private void printInfo(HashMap<String, String> input) {
+        for (String key : input.keySet()) {
+            String info = input.get(key);
+            System.out.println(" " + key);
+            System.out.println(info);
         }
     }
 }

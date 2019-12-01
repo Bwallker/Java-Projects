@@ -89,21 +89,20 @@ public class Persons {
         this.persons.remove(toRemove);
     }
 
-    public Map<String, String> filteredSearch(String query) {
-        Map<String, String> map = new HashMap<String, String>();
+    public ArrayList <HashMap<String, String>> filteredSearch(String query) {
+        HashMap<String, String> map = new HashMap<String, String>();
+        ArrayList <HashMap<String, String>> maps = new ArrayList <HashMap<String, String>>();
+        Collections.sort(this.persons);
         for (Person person : this.persons) {
-            String key = "";
-            if (person.getName().contains(query)) {
-                key += " " + person.getName() + "\n";
+            String info = "";
+            if (person.getName().contains(query) && person.getAddress().contains(query)) {
+                info += " " + person.getName() + "\n";
+                info += "  address: " + person.getAddress() + "\n";
+                info += person.numbersToString(person.getNumbers());
+                map.put(person.getName(), info);
+                maps.add(map);
             }
-            if (person.getAddress() != null && person.getAddress().contains(query)) {
-                key += "  address: " + person.getAddress() + "\n";
-            }
-            Set<String> applicableNumbers = person.NumbersThatContainString(query);
-            String numbersToString = person.numbersToString(applicableNumbers);
-            key += numbersToString;
-            map.put(person.getName(), key);
         }
-        return map;
+        return maps;
     }
 }
