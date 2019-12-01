@@ -112,6 +112,10 @@ public class Person implements Comparable<Person> {
         }
         return output;
     }
+    
+    public String numbersToString() {
+        return this.numbersToString(this.numbers);
+    }
     @Override
     public int compareTo(Person secondPerson) {
         int outcome = this.name.compareTo(secondPerson.getName());

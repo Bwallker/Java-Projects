@@ -159,7 +159,7 @@ public class TextUserInterface {
             System.out.println("  phone number not found");
         } else if (person.getAddress() == null) {
             System.out.println("  address unknown");
-            System.out.println(person.numbersToString(person.getNumbers()));
+            System.out.println(person.numbersToString());
         } else if (person.getNumbers().isEmpty()) {
             System.out.println("  address: " + person.getAddress());
             System.out.println("  phone number not found");

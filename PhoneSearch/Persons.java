@@ -98,7 +98,7 @@ public class Persons {
             if (person.getName().contains(query) && person.getAddress().contains(query)) {
                 info += " " + person.getName() + "\n";
                 info += "  address: " + person.getAddress() + "\n";
-                info += person.numbersToString(person.getNumbers());
+                info += person.numbersToString();
                 map.put(person.getName(), info);
                 maps.add(map);
             }
