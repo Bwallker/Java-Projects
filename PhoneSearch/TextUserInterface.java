@@ -1,5 +1,4 @@
 
-
 import java.util.*;
 
 public class TextUserInterface {
@@ -102,7 +101,7 @@ public class TextUserInterface {
     }
 
     private void removePerson() {
-        String name = this.getName();
+        String name = this.getInfoName();
         this.persons.removePerson(name);
         System.out.println();
     }
@@ -111,12 +110,64 @@ public class TextUserInterface {
         System.out.println("keyword (if empty, all listed): ");
         String keyword = this.reader.nextLine();
         System.out.println();
-        ArrayList <HashMap<String, String>> maps = this.persons.filteredSearch(keyword);
-        for (int i = 0; i < maps.size()-1; i++) {
-            HashMap<String, String> index = maps.get(i);
-            this.printInfo(index);
+        HashMap<String, String> map = this.persons.filteredSearch(keyword);
+        if (map == null) {
+            System.out.println(" keyword not found");
+        } else {
+            this.sort(map);
+            this.printInfo(map);
+            System.out.println();
         }
-        System.out.println();
+    }
+
+    private HashMap<String, String> sort(HashMap<String, String> input) {
+        HashMap<String, String> modifiableInput = input;
+        int i = 0;
+        HashMap<String, Integer> keyToIndex = new HashMap<String, Integer>();
+        HashMap<Integer, String> indexToKey = new HashMap<Integer, String>();
+        for (String key : modifiableInput.keySet()) {
+            keyToIndex.put(key, i);
+            indexToKey.put(i, key);
+            i++;
+        }
+        while (true) {
+            int howManyTimesHasTheMapBeenSortedThisRun = 0;
+            for (Integer index : indexToKey.keySet()) {
+                if (indexToKey.size() == 2) {
+                    String value = indexToKey.get(index);
+                    String nextValue = indexToKey.get(index + 1);
+                    String inputValue = modifiableInput.get(value);
+                    String nextInputValue = modifiableInput.get(nextValue);
+                    if (value.compareTo(nextValue) != 0) {
+                        modifiableInput.remove(value);
+                        modifiableInput.put(value, inputValue);
+                        break;
+                    }
+                }
+                else if (indexToKey.size() < 2) {
+                    break;
+                }
+                else if (indexToKey.get(index + 1) != null) {
+                    String value = indexToKey.get(index);
+                    String nextValue = indexToKey.get(index + 1);
+                    String inputValue = modifiableInput.get(value);
+                    String nextInputValue = modifiableInput.get(nextValue);
+                    if (value.compareTo(nextValue) < 0) {
+                        modifiableInput.remove(value);
+                        modifiableInput.put(value, inputValue);
+                        howManyTimesHasTheMapBeenSortedThisRun++;
+                    } else if (value.compareTo(nextValue) > 0) {
+                        modifiableInput.remove(nextValue);
+                        modifiableInput.put(nextValue, nextInputValue);
+                        howManyTimesHasTheMapBeenSortedThisRun++;
+                    }
+                }
+            }
+            if (howManyTimesHasTheMapBeenSortedThisRun == 0) {
+                break;
+            }
+        }
+        return modifiableInput;
     }
 
     private String getName() {
@@ -144,7 +195,7 @@ public class TextUserInterface {
         address += " " + this.reader.nextLine();
         return address;
     }
-    
+
     private String getInfoName() {
         System.out.print("whose information: ");
         String info = reader.nextLine();
@@ -164,9 +215,11 @@ public class TextUserInterface {
             System.out.println("  address: " + person.getAddress());
             System.out.println("  phone number not found");
         } else {
-            System.out.println(person);
+            System.out.println("  address: " + person.getAddress());
+            System.out.println(person.numbersToString());
         }
     }
+
     private void printInfo(HashMap<String, String> input) {
         for (String key : input.keySet()) {
             String info = input.get(key);

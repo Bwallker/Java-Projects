@@ -38,7 +38,7 @@ public class Persons {
             this.persons.add(person);
         } else {
             for (Person p : this.persons) {
-                if (person == p) {
+                if (person.getName().equals(p.getName())) {
                     p.addAddress(address);
                 }
             }
@@ -89,20 +89,49 @@ public class Persons {
         this.persons.remove(toRemove);
     }
 
-    public ArrayList <HashMap<String, String>> filteredSearch(String query) {
+    public HashMap<String, String> filteredSearch(String query) {
         HashMap<String, String> map = new HashMap<String, String>();
-        ArrayList <HashMap<String, String>> maps = new ArrayList <HashMap<String, String>>();
         Collections.sort(this.persons);
         for (Person person : this.persons) {
             String info = "";
-            if (person.getName().contains(query) && person.getAddress().contains(query)) {
-                info += " " + person.getName() + "\n";
-                info += "  address: " + person.getAddress() + "\n";
+            String name = person.getName();
+            Set<String> numbers = person.getNumbers();
+            String address = person.getAddress();
+            if (name.contains(query) && address != null && !numbers.isEmpty()) {
+                info += " " + name + "\n";
+                info += "  address: " + address + "\n";
                 info += person.numbersToString();
-                map.put(person.getName(), info);
-                maps.add(map);
+                map.put(name, info);
+            } else if (name.contains(query) && address != null) {
+                info += " " + name + "\n";
+                info += "  address: " + address + "\n";
+                info += "phone number not found \n";
+                map.put(name, info);
+            } else if (name.contains(query) && !numbers.isEmpty()) {
+                info += " " + name + "\n";
+                info += "  address unknown \n";
+                info += person.numbersToString();
+                map.put(name, info);
+            } else if (name.contains(query)) {
+                info += " " + name + "\n";
+                info += "  address unknown \n";
+                info += "phone number not found \n";
+                map.put(name, info);
+            } else if (address != null && address.contains(query) && !numbers.isEmpty()) {
+                info += " " + name + "\n";
+                info += "  address: " + address + "\n";
+                info += person.numbersToString();
+                map.put(name, info);
+            } else if (address != null && address.contains(query)) {
+                info += " " + name + "\n";
+                info += "  address: " + address + "\n";
+                info += "phone number not found \n";
+                map.put(name, info);
             }
         }
-        return maps;
+        if (map.isEmpty()) {
+            return null;
+        }
+        return map;
     }
 }
