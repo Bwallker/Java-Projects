@@ -105,20 +105,17 @@ public class Dungeon {
 
         for (int i = 0; i < this.height; i++) {
             for (int count = 0; count < this.length; count++) {
-                boolean playerChecker = false;
-                ArrayList<Boolean> vampireChecker = new ArrayList<Boolean>();
                 Moveable printerCoordinates = new Moveable(count, i);
                 if (printerCoordinates.getX() == player.getX() & printerCoordinates.getY() == player.getY()) {
                     System.out.print("@");
-                    playerChecker = true;
+                    continue;
                 }
-                for (Moveable vampire : this.listOfVampires) {
+                Moveable vampire = this.listOfVampires.get(0);
+                for (int counter = 0; counter < listOfVampires.size()-1; counter++) {
+                    vampire = this.listOfVampires.get(counter);
                     if (printerCoordinates.getX() == vampire.getX() && printerCoordinates.getY() == vampire.getY()) {
                         System.out.print("v");
-                    }
-                }
-                for (Boolean check : vampireChecker) {
-                    if (!check & !playerChecker) {
+                    } else {
                         System.out.print(".");
                     }
                 }
