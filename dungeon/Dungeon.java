@@ -102,21 +102,26 @@ public class Dungeon {
     }
 
     private void print() {
+
         for (int i = 0; i < this.height; i++) {
             for (int count = 0; count < this.length; count++) {
+                boolean playerChecker = false;
+                ArrayList<Boolean> vampireChecker = new ArrayList<Boolean>();
                 Moveable printerCoordinates = new Moveable(count, i);
-                if (printerCoordinates.equals(this.player)) {
+                if (printerCoordinates.getX() == player.getX() & printerCoordinates.getY() == player.getY()) {
                     System.out.print("@");
-                    continue;
+                    playerChecker = true;
                 }
                 for (Moveable vampire : this.listOfVampires) {
-                    if (printerCoordinates.equals(vampire)) {
+                    if (printerCoordinates.getX() == vampire.getX() && printerCoordinates.getY() == vampire.getY()) {
                         System.out.print("v");
-                        continue;
                     }
                 }
-                
-                System.out.print(".");
+                for (Boolean check : vampireChecker) {
+                    if (!check & !playerChecker) {
+                        System.out.print(".");
+                    }
+                }
             }
             System.out.print("\n");
         }
@@ -169,6 +174,7 @@ public class Dungeon {
         moveable.move(dx, dy);
         return true;
     }
+
     private boolean moveVertifierForPlayer(int dx, int dy, Moveable moveable) {
         int futureX = moveable.getX() + dx;
         int futureY = moveable.getY() + dy;
