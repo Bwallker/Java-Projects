@@ -1,9 +1,11 @@
 package wormgame;
 
+import java.awt.Graphics;
 import javax.swing.SwingUtilities;
 import wormgame.domain.*;
-import wormgame.gui.UserInterface;
-import wormgame.game.WormGame;
+import wormgame.gui.*;
+import wormgame.game.*;
+import wormgame.*;
 
 public class Main {
 

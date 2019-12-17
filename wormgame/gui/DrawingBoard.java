@@ -4,8 +4,8 @@ import java.awt.Graphics;
 import wormgame.gui.*;
 import java.util.*;
 import javax.swing.JPanel;
-import wormgame.domain.Worm;
-import wormgame.game.WormGame;
+import wormgame.domain.*;
+import wormgame.game.*;
 
 /**
  *
@@ -23,9 +23,12 @@ public class DrawingBoard extends JPanel implements Updatable {
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics.setColor(Color.black);
-        graphics.fill3DRect(0, 0, this.pieceLength, this.pieceLength, true);
+        for (Piece piece : this.wormGame.getWorm().getPieces()) {
+            graphics.fill3DRect(piece.getX()*this.pieceLength, piece.getY()*this.pieceLength, this.pieceLength, this.pieceLength, true);
+        }
+        
         graphics.setColor(Color.red);
-        graphics.fillOval(wormGame.getApple().getX(), wormGame.getApple().getY(), 1, 1);
+        graphics.fillOval(wormGame.getApple().getX()*this.pieceLength, wormGame.getApple().getY()*this.pieceLength, this.pieceLength, this.pieceLength);
     }
 
     @Override
