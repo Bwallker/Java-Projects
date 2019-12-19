@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2607dcca-740b-4d0a-81f3-0755e107b770" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="08fd2ac2-220e-485b-beec-47af11cc5d49" name="Default Changelist" comment="" />
+>>>>>>> 5c58b681f4bda4503eb5a04fb00b51ef84b38f8b
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +63,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="649" y="107" key="SettingsEditor" timestamp="1576689996155">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -71,5 +76,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576689889596" />
+=======
+    <state x="661" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1576690332821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576690332821" />
+>>>>>>> 5c58b681f4bda4503eb5a04fb00b51ef84b38f8b
   </component>
 </project>
