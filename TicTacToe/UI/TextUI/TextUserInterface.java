@@ -8,14 +8,14 @@ public class TextUserInterface {
     private Scanner reader;
     private Board board;
     private GameMode gameMode;
-    private Type type;
+    private Symbol symbol;
     private boolean playerGoesFirst;
 
     public TextUserInterface() throws IllegalAccessException {
         this.reader = new Scanner(System.in);
         this.board = null;
         this.gameMode = null;
-        this.type = null;
+        this.symbol = null;
         this.playerGoesFirst = true;
     }
 
@@ -34,13 +34,13 @@ public class TextUserInterface {
     private void setup() {
         System.out.println("Tic Tac Toe");
         setGameMode();
-        setType();
+        setSymbol();
 
     }
 
     private void setGameMode() {
         System.out.println("do you want to play against the computer or against a person in hotseat?");
-        System.out.println("type s to play single player and m to play multi player");
+        System.out.println("symbol s to play single player and m to play multi player");
         String input = reader.nextLine();
         input = input.toLowerCase();
         if (input.contains("s")) {
@@ -53,21 +53,21 @@ public class TextUserInterface {
         }
     }
 
-    private void setType() {
+    private void setSymbol() {
         if (this.gameMode == GameMode.SINGLE_PLAYER) {
-            System.out.println("type x to set your symbol to x and o to set it to o");
+            System.out.println("symbol x to set your symbol to x and o to set it to o");
         } else {
-            System.out.println("type x to the first players symbol to x and o to set it to o");
+            System.out.println("symbol x to the first players symbol to x and o to set it to o");
         }
         String input = reader.nextLine();
         input = input.toLowerCase();
         if (input.contains("x")) {
-            this.type = Type.CROSS;
+            this.symbol = Symbol.CROSS;
         } else if (input.contains("o")) {
-            this.type = Type.DOT;
+            this.symbol = Symbol.DOT;
         } else {
             System.out.println("input invalid");
-            setType();
+            setSymbol();
         }
     }
 
@@ -87,12 +87,12 @@ public class TextUserInterface {
 
     private void singlePlayer() throws IllegalAccessException {
     if (playerGoesFirst) {
-        this.board = new Board(this.type);
+        this.board = new Board(this.symbol, true);
     } else {
-        if (this.type == Type.CROSS) {
-            this.board = new Board(Type.DOT);
+        if (this.symbol == Symbol.CROSS) {
+            this.board = new Board(Symbol.DOT, false);
         } else {
-            this.board = new Board(Type.CROSS);
+            this.board = new Board(Symbol.CROSS, false);
         }
     }
 

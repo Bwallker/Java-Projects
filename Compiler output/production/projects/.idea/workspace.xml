@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8988133e-a05e-41e8-83f1-235c0e2327c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/PlayerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TicTacToe/AdvancedLogic/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/AdvancedLogic/AI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Difficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Figure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Scoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Scoordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Turn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/UI/TextUI/TextUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/UI/TextUI/TextUserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wormgame/gui/KeyboardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/wormgame/gui/KeyboardListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,10 +93,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1103" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579509038882" />
-    <state x="617" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579678041663">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="617" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579678041663" />
     <state x="1187" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579600799846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -120,58 +105,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1274" y="418" width="356" height="204" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579600535812" />
-    <state width="457" height="279" key="GridCell.Tab.0.bottom" timestamp="1579678045565">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="457" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579678045565" />
-    <state width="457" height="279" key="GridCell.Tab.0.center" timestamp="1579678045565">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="457" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579678045565" />
-    <state width="457" height="279" key="GridCell.Tab.0.left" timestamp="1579678045561">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="457" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579678045561" />
-    <state width="457" height="279" key="GridCell.Tab.0.right" timestamp="1579678045565">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="457" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579678045565" />
     <state x="922" y="161" key="SettingsEditor" timestamp="1579508950216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="922" y="161" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579508950216" />
-    <state x="1136" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579775384765">
+    <state x="1136" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579600627564">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1136" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579775384765" />
+    <state x="1136" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579600627564" />
     <state x="1249" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579508917354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1249" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579508917354" />
-    <state x="1071" y="73" width="737" height="894" key="find.popup" timestamp="1579773484525">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1071" y="73" width="737" height="894" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579773484525" />
     <state x="685" y="139" key="new project wizard" timestamp="1579600933345">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="685" y="139" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1579600933345" />
-    <state x="1182" y="147" key="refactoring.ChangeSignatureDialog" timestamp="1579678783232">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1182" y="147" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579678783232" />
-    <state x="1096" y="242" key="run.anything.popup" timestamp="1579775382533">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1096" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579775382533" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1579772421716">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579772421716" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/projects$Main.ic" NAME="Main Coverage Results" MODIFIED="1579601749520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>TicTacToe.*</FILTER>
-    </SUITE>
   </component>
 </project>

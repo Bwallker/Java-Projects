@@ -2,42 +2,42 @@ package TicTacToe.BasicComponents;
 
 public class Player {
     private boolean hasWon;
-    private Type type;
-    private Turn turn;
-    private boolean isMyTurn;
-    public Player(Type type, Turn turn) {
-        this.type = type;
+    private Symbol symbol;
+    private PlayerType turn;
+    private boolean isMyPlayerType;
+    public Player(Symbol symbol, PlayerType turn) {
+        this.symbol = symbol;
         this.hasWon = false;
         this.turn = turn;
-        this.isMyTurn = false;
+        this.isMyPlayerType = false;
     }
 
-    public Type getType() {
-        return type;
+    public Symbol getSymbol() {
+        return this.symbol;
     }
 
     public boolean hasWon() {
-        return hasWon;
+        return this.hasWon;
     }
 
     public void setHasWon(boolean hasWon) {
         this.hasWon = hasWon;
     }
 
-    public Turn getTurn() {
+    public PlayerType getPlayerType() {
         return this.turn;
     }
-    public void myTurn() {
-        this.isMyTurn = true;
+    public void myPlayerType() {
+        this.isMyPlayerType = true;
     }
-    public void notMyTurn() {
-        this.isMyTurn = false;
+    public void notMyPlayerType() {
+        this.isMyPlayerType = false;
     }
-    public boolean isItMyTurn() {
-        return this.isMyTurn;
+    public boolean isItMyPlayerType() {
+        return this.isMyPlayerType;
     }
-    public void changeTurn() {
-        if (!this.isMyTurn) this.isMyTurn = true;
-        else this.isMyTurn = false;
+    public void changePlayerType() {
+        if (!this.isMyPlayerType) this.isMyPlayerType = true;
+        else this.isMyPlayerType = false;
     }
 }

@@ -11,23 +11,23 @@ public class Board {
     private Player winner;
     private Player playerOne;
     private Player playerTwo;
-    private Type firstPlayerType;
-    private Type secondPlayerType;
+    private Symbol firstPlayersymbol;
+    private Symbol secondPlayersymbol;
     private boolean firstPlayerHasMoved;
     private boolean secondPlayerHasMoved;
     private boolean firstPlayerMoveSuccessful;
     private boolean secondPlayerMoveSuccessful;
     private Figure[][] allThrees;
 
-    public Board(Type firstPlayerType, boolean humanGoesFirst) throws IllegalAccessException {
-        this.board = new Figure[2][2];
+    public Board(Symbol firstPlayersymbol, boolean humanGoesFirst) throws IllegalStateException {
+        this.board = new Figure[3][3];
         this.gameOver = false;
 
-        this.firstPlayerType = firstPlayerType;
-        if (firstPlayerType == Type.CROSS) {
-            secondPlayerType = Type.DOT;
-        } else if (firstPlayerType == Type.DOT) {
-            secondPlayerType = Type.CROSS;
+        this.firstPlayersymbol = firstPlayersymbol;
+        if (firstPlayersymbol == Symbol.CROSS) {
+            secondPlayersymbol = Symbol.DOT;
+        } else if (firstPlayersymbol == Symbol.DOT) {
+            secondPlayersymbol = Symbol.CROSS;
         } else {
             throw new IllegalStateException("player symbol cannot be null");
         }
@@ -42,17 +42,17 @@ public class Board {
 
         this.allThrees = new Figure[][]{horizontal1, horizontal2, column1, column2, column3, row1, row2, row3};
         if (humanGoesFirst) {
-            this.playerOne = new Player(firstPlayerType, Turn.HUMAN);
-            this.playerTwo = new Player(secondPlayerType, Turn.COMPUTER);
+            this.playerOne = new Player(firstPlayersymbol, PlayerType.HUMAN);
+            this.playerTwo = new Player(secondPlayersymbol, PlayerType.COMPUTER);
         } else {
-            this.playerOne = new Player(firstPlayerType, Turn.COMPUTER);
-            this.playerTwo = new Player(secondPlayerType, Turn.HUMAN);
+            this.playerOne = new Player(firstPlayersymbol, PlayerType.COMPUTER);
+            this.playerTwo = new Player(secondPlayersymbol, PlayerType.HUMAN);
         }
         this.winner = null;
     }
     public void firstPlayerMoves(int moveWidth, int moveLength) {
         if (this.board[moveWidth][moveLength] == null) {
-            this.board[moveWidth][moveLength] = new Figure(firstPlayerType);
+            this.board[moveWidth][moveLength] = new Figure(firstPlayersymbol);
             this.firstPlayerHasMoved = true;
             this.firstPlayerMoveSuccessful = true;
         } else {
@@ -61,7 +61,7 @@ public class Board {
     }
     public void secondPlayerMoves(int moveWidth, int moveLength) {
         if (this.board[moveWidth][moveLength] == null) {
-            this.board[moveWidth][moveLength] = new Figure(secondPlayerType);
+            this.board[moveWidth][moveLength] = new Figure(secondPlayersymbol);
             this.secondPlayerHasMoved = true;
             this.secondPlayerMoveSuccessful = true;
         } else {
@@ -73,38 +73,38 @@ public class Board {
         this.firstPlayerHasMoved = false;
         this.secondPlayerHasMoved = false;
         if (gameOver) {
-            return;
+            return true;
         }
 
         for (Figure[] Figures : allThrees) {
             int crossAmount = 0;
             int dotAmount = 0;
             for (Figure figure : Figures) {
-                if (figure.getType() == Type.CROSS) {
+                if (figure.getSymbol() == Symbol.CROSS) {
                     crossAmount++;
                 }
-                if (figure.getType() == Type.DOT) {
+                if (figure.getSymbol() == Symbol.DOT) {
                     dotAmount++;
                 }
             }
             if (crossAmount == 3) {
-                this.winner = this.findWinner(Type.CROSS);
+                this.winner = this.findWinner(Symbol.CROSS);
                 this.gameOver = true;
-                break;
+                return true;
             }
             else if (dotAmount == 3) {
-                this.winner = this.findWinner(Type.DOT);
+                this.winner = this.findWinner(Symbol.DOT);
                 this.gameOver = true;
-                break;
+                return true;
             }
         }
-        return gameOver;
+        return false;
     }
-    private Player findWinner(Type type) {
+    private Player findWinner(Symbol symbol) {
         this.gameOver = true;
-        if (this.playerOne.getType() == type) {
+        if (this.playerOne.getSymbol() == symbol) {
             return this.playerOne;
-        } else if (this.playerTwo.getType() == type) {
+        } else if (this.playerTwo.getSymbol() == symbol) {
             return this.playerTwo;
         } else {
             throw new IllegalArgumentException("There cannot be three of the same symbol in a row without either player winning, and thus something has gone terribly wrong");
@@ -139,6 +139,9 @@ public class Board {
     }
     public boolean bothPlayerMovesSuccessful() {
         return this.firstPlayerMoveSuccessful && this.secondPlayerMoveSuccessful;
+    }
+    public Board clone() {
+        return this;
     }
 
     public Figure[][] getAllThrees() {

@@ -2,30 +2,29 @@ package TicTacToe.AdvancedLogic;
 
 import TicTacToe.BasicComponents.Board.Board;
 import TicTacToe.BasicComponents.*;
+
 import java.util.*;
 public class AI {
     private Player player;
     private Player computer;
-    private Turn turn;
-    private Difficulty difficulty;
+    private PlayerType turn;
+    private static Difficulty difficulty;
     private Board board;
     private List<Coordinate> allPossibleMove;
     private Figure[][] boardGrid;
-    private Map<Coordinate, Integer> move;
-    private boolean playerGoesFirst;
+    private static boolean playerGoesFirst;
 
-    public AI(Difficulty diff, Player player, Player computer, Board board, boolean playerGoesFirst) {
+    public AI(Difficulty difficulty, Player player, Player computer, Board board, boolean playerGoesFirst) {
         this.player = player;
         this.computer = computer;
-        this.difficulty = diff;
+        this.difficulty = difficulty;
         if (playerGoesFirst) {
-            this.turn = Turn.HUMAN;
+            this.turn = PlayerType.HUMAN;
         } else {
-            this.turn = Turn.COMPUTER;
+            this.turn = PlayerType.COMPUTER;
         }
         this.board = board;
         this.boardGrid = this.board.getBoard();
-        this.move = new HashMap<Coordinate, Integer>();
         this.allPossibleMove = new ArrayList<Coordinate>();
         this.playerGoesFirst = playerGoesFirst;
         calculatePossibleMoves();
@@ -36,49 +35,30 @@ public class AI {
         if (percent < 0 || percent > 1) {
             throw new IllegalArgumentException("difficulty rating must be between 0 and 1");
         }
-        this.difficulty.setDiff(percent);
+        this.difficulty.setDifficulty(percent);
     }
 
-    public Scoordinate evaluateBoard() {
-        if (this.board.GameOver()) {
-            return null;
+    public PlayerType evaluateMove(Coordinate coordinate) {
+        this.calculatePossibleMoves();
+        if (this.board.GameOver() || this.allPossibleMove.isEmpty() || !this.allPossibleMove.contains(coordinate)) {
+            return PlayerType.BLANK;
         }
-        Board testBoard = this.board;
-        Iterator iterator = this.allPossibleMove.iterator();
-        while (iterator.hasNext()) {
-            if (iterator.next().getClass() == Scoordinate)
-            Coordinate coordinate = (Coordinate)iterator.next();
-            computerMoves(coordinate, testBoard);
-            testBoard.checkIfGameOver();
-            Player winner = testBoard.getWinner();
-            if (winner.getTurn() == Turn.COMPUTER) {
-                computerMoves(coordinate, this.board);
-                return null;
-            } else {
-                Scoordinate scoordinate = new Scoordinate(coordinate.getX(), coordinate.getY(), Turn.HUMAN);
-                iterator.remove();
-                this.allPossibleMove.add(scoordinate);
-            }
-        }
-        this.player.changeTurn();
-        this.computer.changeTurn();
-        if (player.isItMyTurn()) {
-            this.turn = Turn.HUMAN;
-        } else {
-            this.turn = Turn.COMPUTER;
-        }
+        Board testBoard = this.board.clone();
+        makeAMove(this.turn, coordinate, testBoard);
+        return null;
+
     }
-    private void computerMoves(Coordinate coordinate, Board board) {
+    private void makeAMove(PlayerType playerWhomMoves, Coordinate coordinate, Board board) {
         if (this.playerGoesFirst) {
-            if (this.turn == Turn.COMPUTER) {
+            if (this.turn == PlayerType.COMPUTER) {
                 board.secondPlayerMoves(coordinate.getX(), coordinate.getY());
-            } else if (this.turn == Turn.HUMAN) {
+            } else if (this.turn == PlayerType.HUMAN) {
                 board.firstPlayerMoves(coordinate.getX(), coordinate.getY());
             }
         } else {
-            if (this.turn == Turn.COMPUTER) {
+            if (this.turn == PlayerType.COMPUTER) {
                 board.firstPlayerMoves(coordinate.getX(), coordinate.getY());
-            } else if (this.turn == Turn.HUMAN) {
+            } else if (this.turn == PlayerType.HUMAN) {
                 board.secondPlayerMoves(coordinate.getX(), coordinate.getY());
             }
         }
@@ -87,9 +67,15 @@ public class AI {
         for (int i = 0; i < this.boardGrid.length; i++) {
             for (int j = 0; j < this.boardGrid[0].length; j++) {
                 if (this.boardGrid[i][j] == null) {
+                    if (this.allPossibleMove.contains(new Coordinate(i, j)) || this.allPossibleMove.contains(new Scoordinate(i, j, PlayerType.HUMAN)) || this.allPossibleMove.contains(new Scoordinate(i, j, PlayerType.COMPUTER)) || this.allPossibleMove.contains(new Scoordinate(i, j, PlayerType.BLANK))) {
+                        continue;
+                    }
                     this.allPossibleMove.add(new Coordinate(i, j));
                 } else {
                     this.allPossibleMove.remove(new Coordinate(i, j));
+                    this.allPossibleMove.remove(new Scoordinate(i, j, PlayerType.COMPUTER));
+                    this.allPossibleMove.remove(new Scoordinate(i, j, PlayerType.HUMAN));
+                    this.allPossibleMove.remove(new Scoordinate(i, j, PlayerType.BLANK));
                 }
             }
         }

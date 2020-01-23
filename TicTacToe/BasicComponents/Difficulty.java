@@ -1,20 +1,35 @@
 package TicTacToe.BasicComponents;
 
 public enum Difficulty {
-    EASY(0.1), MEDIUM(0.3), HARD(0.6), VERY_HARD(0.8), IMPOSSIBLE(1), CUSTOM(0);
+    EASY(0.1, 1), MEDIUM(0.3, 2), HARD(0.6, 2), VERY_HARD(0.8, 3), IMPOSSIBLE(1, Integer.MAX_VALUE), CUSTOM(0, 0);
 
-    private double diff;
-    private int i;
+    private double difficulty;
+    private int searchDepth;
+    private int difficultyMutabilityLimiter;
+    private int searchDepthMutabilityLimiter;
 
-    private Difficulty(double diff) {
-        this.diff = diff;
-        this.i = 0;
+    private Difficulty(double difficulty, int searchDepth) {
+        this.difficulty = difficulty;
+        this.searchDepth = searchDepth;
+        this.difficultyMutabilityLimiter = 0;
+        this.searchDepthMutabilityLimiter = 0;
     }
-    public void setDiff(double diff) {
-        i++;
-        if (i > 1 || this != Difficulty.CUSTOM) {
+    public void setDifficulty(double difficulty) {
+        difficultyMutabilityLimiter++;
+        if (difficultyMutabilityLimiter > 1 || this != Difficulty.CUSTOM) {
             return;
         }
-        this.diff = diff;
+        this.difficulty = difficulty;
+    }
+    public void setSearchDepth(int searchDepth) {
+        searchDepthMutabilityLimiter++;
+        if (searchDepthMutabilityLimiter > 1 || this != Difficulty.CUSTOM) {
+            return;
+        }
+        this.searchDepth = searchDepth;
+    }
+    public void setSearchDeptAndDiff(double difficulty, int searchDepth) {
+        setDifficulty(difficulty);
+        setSearchDepth(searchDepth);
     }
 }
