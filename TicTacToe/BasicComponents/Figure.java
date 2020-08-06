@@ -1,10 +1,10 @@
 package TicTacToe.BasicComponents;
 public class Figure {
     private boolean draw;
-    public Type type;
-    public Figure (Type type) {
+    public Symbol symbol;
+    public Figure (Symbol symbol) {
         this.draw = true;
-        this.type = type;
+        this.symbol = symbol;
     }
 
     public boolean getDraw() {
@@ -15,11 +15,11 @@ public class Figure {
         this.draw = draw;
     }
 
-    public Type getType() {
-        return type;
+    public Symbol getSymbol() {
+        return this.symbol;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setSymbol(Symbol symbol) {
+        this.symbol = symbol;
     }
 }

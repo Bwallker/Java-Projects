@@ -11,7 +11,7 @@ public class KeyboardListener implements KeyListener {
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keysymbold(KeyEvent e) {
     }
 
     @Override
