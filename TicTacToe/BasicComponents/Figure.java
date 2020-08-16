@@ -22,4 +22,5 @@ public class Figure {
     public void setSymbol(Symbol symbol) {
         this.symbol = symbol;
     }
+
 }

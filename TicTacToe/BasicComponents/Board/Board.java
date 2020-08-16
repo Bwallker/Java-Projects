@@ -1,35 +1,40 @@
 package TicTacToe.BasicComponents.Board;
 
 import TicTacToe.BasicComponents.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 public class Board {
     private static Figure[][] board;
     private boolean gameOver;
     private Player winner;
     private Player playerOne;
     private Player playerTwo;
-    private Symbol firstPlayersymbol;
-    private Symbol secondPlayersymbol;
+    private Symbol firstPlayerSymbol;
+    private Symbol secondPlayerSymbol;
     private boolean firstPlayerHasMoved;
     private boolean secondPlayerHasMoved;
     private boolean firstPlayerMoveSuccessful;
     private boolean secondPlayerMoveSuccessful;
+    private List<Coordinate> allPossibleMoves;
     private Figure[][] allThrees;
 
-    public Board(Symbol firstPlayersymbol, boolean humanGoesFirst) throws IllegalStateException {
+    /**
+     * @param firstPlayerSymbol Defines which symbol the player that makes the first move should use. Symbol can be either CROSS or DOT
+     */
+    public Board(Symbol firstPlayerSymbol) {
         this.board = new Figure[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                this.board[i][j] = new Figure(Symbol.NULL);
+            }
+        }
         this.gameOver = false;
-
-        this.firstPlayersymbol = firstPlayersymbol;
-        if (firstPlayersymbol == Symbol.CROSS) {
-            secondPlayersymbol = Symbol.DOT;
-        } else if (firstPlayersymbol == Symbol.DOT) {
-            secondPlayersymbol = Symbol.CROSS;
+        this.allPossibleMoves = new ArrayList<Coordinate>();
+        this.firstPlayerSymbol = firstPlayerSymbol;
+        if (firstPlayerSymbol == Symbol.CROSS) {
+            this.secondPlayerSymbol = Symbol.DOT;
         } else {
-            throw new IllegalStateException("player symbol cannot be null");
+            this.firstPlayerSymbol = Symbol.DOT;
+            this.secondPlayerSymbol = Symbol.CROSS;
         }
         Figure[] horizontal1 = this.addEntriesToArray(this.board[0][0], this.board[1][1], this.board[2][2]);
         Figure[] horizontal2 = this.addEntriesToArray(this.board[2][0], this.board[1][1], this.board[0][2]);
@@ -41,18 +46,13 @@ public class Board {
         Figure[] row3 = this.addEntriesToArray(this.board[0][2], this.board[1][2], this.board[2][2]);
 
         this.allThrees = new Figure[][]{horizontal1, horizontal2, column1, column2, column3, row1, row2, row3};
-        if (humanGoesFirst) {
-            this.playerOne = new Player(firstPlayersymbol, PlayerType.HUMAN);
-            this.playerTwo = new Player(secondPlayersymbol, PlayerType.COMPUTER);
-        } else {
-            this.playerOne = new Player(firstPlayersymbol, PlayerType.COMPUTER);
-            this.playerTwo = new Player(secondPlayersymbol, PlayerType.HUMAN);
-        }
+        this.playerOne = new Player(this.firstPlayerSymbol);
+        this.playerTwo = new Player(this.secondPlayerSymbol);
         this.winner = null;
     }
     public void firstPlayerMoves(int moveWidth, int moveLength) {
         if (this.board[moveWidth][moveLength] == null) {
-            this.board[moveWidth][moveLength] = new Figure(firstPlayersymbol);
+            this.board[moveWidth][moveLength] = new Figure(firstPlayerSymbol);
             this.firstPlayerHasMoved = true;
             this.firstPlayerMoveSuccessful = true;
         } else {
@@ -61,7 +61,7 @@ public class Board {
     }
     public void secondPlayerMoves(int moveWidth, int moveLength) {
         if (this.board[moveWidth][moveLength] == null) {
-            this.board[moveWidth][moveLength] = new Figure(secondPlayersymbol);
+            this.board[moveWidth][moveLength] = new Figure(secondPlayerSymbol);
             this.secondPlayerHasMoved = true;
             this.secondPlayerMoveSuccessful = true;
         } else {
@@ -121,25 +121,6 @@ public class Board {
         return gameOver;
     }
 
-    public boolean FirstPlayerHasMoved() {
-        return this.firstPlayerHasMoved;
-    }
-    public boolean SecondPlayerHasMoved() {
-        return this.secondPlayerHasMoved;
-    }
-    public boolean bothPlayerHaveMoved() {
-        return this.firstPlayerHasMoved && this.secondPlayerHasMoved;
-    }
-
-    public boolean FirstPlayerMoveSuccessful() {
-        return firstPlayerMoveSuccessful;
-    }
-    public boolean SecondPlayerMoveSuccessful() {
-        return secondPlayerMoveSuccessful;
-    }
-    public boolean bothPlayerMovesSuccessful() {
-        return this.firstPlayerMoveSuccessful && this.secondPlayerMoveSuccessful;
-    }
     public Board clone() {
         return this;
     }
@@ -150,5 +131,23 @@ public class Board {
 
     public Figure[][] getBoard() {
         return this.board;
+    }
+
+    @Override
+    public String toString() {
+        String string = null;
+        for(Figure[] figures : this.board) {
+            for (Figure figure : figures) {
+                if (figure.getSymbol() == Symbol.CROSS) {
+                    string += "x  ";
+                } else if (figure.getSymbol() == Symbol.DOT) {
+                    string += "o  ";
+                } else {
+                    string += "null  ";
+                }
+            }
+            string += "\n";
+        }
+        return string;
     }
 }

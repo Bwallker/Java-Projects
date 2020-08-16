@@ -1,5 +1,5 @@
 package TicTacToe.BasicComponents;
 
 public enum Symbol {
-    CROSS, DOT
+    CROSS, DOT, NULL
 }
