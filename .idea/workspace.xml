@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8988133e-a05e-41e8-83f1-235c0e2327c5" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/.gitignore/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/.gitignore/.gitignore" afterDir="false" />
@@ -12,19 +13,26 @@
       <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/TicTacToe/BasicComponents/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/TicTacToe/BasicComponents/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/PlayerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/AdvancedLogic/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/AdvancedLogic/AI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Figure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Scoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Scoordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Turn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Symbol.java" afterDir="false" />
+>>>>>>> 9b4ebfdfd4991d580580f6564abf5764bb944024
       <change beforePath="$PROJECT_DIR$/TicTacToe/UI/TextUI/TextUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/UI/TextUI/TextUserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,7 +53,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+>>>>>>> 9b4ebfdfd4991d580580f6564abf5764bb944024
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -93,6 +105,7 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="552" y="179" key="#Project_Structure" timestamp="1597644623827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -184,6 +197,12 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+=======
+    <state x="926" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1597538743028">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="926" y="367" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597538743028" />
+>>>>>>> 9b4ebfdfd4991d580580f6564abf5764bb944024
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projects$Main.ic" NAME="Main Coverage Results" MODIFIED="1579601749520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
