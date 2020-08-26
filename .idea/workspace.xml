@@ -2,37 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8988133e-a05e-41e8-83f1-235c0e2327c5" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/.gitignore/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/.gitignore/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/META-INF/projects.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/TicTacToe/BasicComponents/Board/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/TicTacToe/BasicComponents/Board/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler output/production/projects/TicTacToe/BasicComponents/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler output/production/projects/TicTacToe/BasicComponents/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/PlayerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/AdvancedLogic/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/AdvancedLogic/AI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Difficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Figure.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Figure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Scoordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Scoordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Turn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicTacToe/BasicComponents/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/BasicComponents/Symbol.java" afterDir="false" />
->>>>>>> 9b4ebfdfd4991d580580f6564abf5764bb944024
-      <change beforePath="$PROJECT_DIR$/TicTacToe/UI/TextUI/TextUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe/UI/TextUI/TextUserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,11 +36,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
-=======
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
->>>>>>> 9b4ebfdfd4991d580580f6564abf5764bb944024
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -105,7 +84,6 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-<<<<<<< HEAD
     <state x="552" y="179" key="#Project_Structure" timestamp="1597644623827">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -122,46 +100,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="761" y="343" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597645284240" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1598250956148">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1598268568020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1598250956148">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1598268568020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1598250956148">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1598268568020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1598250956148">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1598268568020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598250956148">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568020" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598268568000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1598250956148">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568000" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1598268568000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1598250956148">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568000" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1598268568000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1598250956148">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568000" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1598268568000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598250956148" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598268568000" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1597645310670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597645310670" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597645211311">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1598424142364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597645211311" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598424142364" />
+    <state x="342" y="141" key="new project wizard" timestamp="1598428220175">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="141" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1598428220175" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1598251407405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -197,12 +179,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-=======
-    <state x="926" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1597538743028">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="926" y="367" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597538743028" />
->>>>>>> 9b4ebfdfd4991d580580f6564abf5764bb944024
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/projects$Main.ic" NAME="Main Coverage Results" MODIFIED="1579601749520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
