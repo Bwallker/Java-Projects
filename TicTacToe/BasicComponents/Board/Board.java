@@ -46,26 +46,36 @@ public class Board {
         Figure[] row3 = this.addEntriesToArray(this.board[0][2], this.board[1][2], this.board[2][2]);
 
         this.allThrees = new Figure[][]{horizontal1, horizontal2, column1, column2, column3, row1, row2, row3};
-        this.playerOne = new Player(this.firstPlayerSymbol);
-        this.playerTwo = new Player(this.secondPlayerSymbol);
+        this.playerOne = new Player(this.firstPlayerSymbol, true);
+        this.playerTwo = new Player(this.secondPlayerSymbol, false);
         this.winner = null;
     }
-    public void firstPlayerMoves(int moveWidth, int moveLength) {
-        if (this.board[moveWidth][moveLength] == null) {
-            this.board[moveWidth][moveLength] = new Figure(firstPlayerSymbol);
-            this.firstPlayerHasMoved = true;
-            this.firstPlayerMoveSuccessful = true;
+    public void playerMoves(int moveWidth, int moveLength, Player player) {
+        if (this.board[moveWidth][moveLength].getSymbol() == Symbol.NULL) {
+            this.board[moveWidth][moveLength] = new Figure(player.getSymbol());
+            if (player.isFirstPlayer()) {
+                this.firstPlayerHasMoved = true;
+                this.firstPlayerMoveSuccessful = true;
+            } else {
+                this.secondPlayerHasMoved = true;
+                this.secondPlayerMoveSuccessful = true;
+            }
+            Figure[] horizontal1 = this.addEntriesToArray(this.board[0][0], this.board[1][1], this.board[2][2]);
+            Figure[] horizontal2 = this.addEntriesToArray(this.board[2][0], this.board[1][1], this.board[0][2]);
+            Figure[] column1 = this.addEntriesToArray(this.board[0][0], this.board[0][1], this.board[0][2]);
+            Figure[] column2 = this.addEntriesToArray(this.board[1][0], this.board[1][1], this.board[1][2]);
+            Figure[] column3 = this.addEntriesToArray(this.board[2][0], this.board[2][1], this.board[2][2]);
+            Figure[] row1 = this.addEntriesToArray(this.board[0][0], this.board[1][0], this.board[2][0]);
+            Figure[] row2 = this.addEntriesToArray(this.board[0][1], this.board[1][1], this.board[2][1]);
+            Figure[] row3 = this.addEntriesToArray(this.board[0][2], this.board[1][2], this.board[2][2]);
+
+            this.allThrees = new Figure[][]{horizontal1, horizontal2, column1, column2, column3, row1, row2, row3};
         } else {
-            this.firstPlayerMoveSuccessful = false;
-        }
-    }
-    public void secondPlayerMoves(int moveWidth, int moveLength) {
-        if (this.board[moveWidth][moveLength] == null) {
-            this.board[moveWidth][moveLength] = new Figure(secondPlayerSymbol);
-            this.secondPlayerHasMoved = true;
-            this.secondPlayerMoveSuccessful = true;
-        } else {
-            this.secondPlayerMoveSuccessful = false;
+            if (player.isFirstPlayer()) {
+                this.firstPlayerMoveSuccessful = false;
+            } else {
+                this.secondPlayerMoveSuccessful = false;
+            }
         }
     }
 
@@ -135,7 +145,7 @@ public class Board {
 
     @Override
     public String toString() {
-        String string = null;
+        String string = "";
         for(Figure[] figures : this.board) {
             for (Figure figure : figures) {
                 if (figure.getSymbol() == Symbol.CROSS) {
@@ -150,4 +160,19 @@ public class Board {
         }
         return string;
     }
+
+    public boolean playerMoved(Player player) {
+        if (player.getSymbol() == playerOne.getSymbol()) {
+            return firstPlayerHasMoved;
+        }
+        return secondPlayerHasMoved;
+    }
+
+    public boolean playerMoveSuccessful(Player player) {
+        if (player.getSymbol() == playerOne.getSymbol()) {
+            return firstPlayerMoveSuccessful;
+        }
+        return secondPlayerMoveSuccessful;
+    }
+
 }
